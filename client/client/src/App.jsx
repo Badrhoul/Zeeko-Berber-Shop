@@ -2,14 +2,16 @@ import { useState } from 'react'
 import Navbar from "./Navbar.jsx"
 import './App.css'
 import PhotoRight from './PhotoRight.jsx'
+import Form from './Form.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
- const thing = 'hello'
+  const thing = 'hello'
   return (
     <>
-     <Navbar></Navbar>
-     <PhotoRight photo={thing} blurb={thing}></PhotoRight>
+      <Navbar></Navbar>
+      <PhotoRight photo={thing} blurb={thing}></PhotoRight>
+
     </>
   )
 }

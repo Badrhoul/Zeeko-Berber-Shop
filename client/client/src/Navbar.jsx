@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 //import logo from \assets\barberLogo.jpeg
 
 function Navbar() {
@@ -11,7 +12,9 @@ function Navbar() {
       <div className="nav-buttons">
         <button className="nav-button">Home</button>
         <button className="nav-button">About</button>
-        <button className="nav-button">Book Now</button>
+        <Link to='schedule'>
+          <button className="nav-button">Book Now</button>
+        </Link>
         <div className="dropdown">
           <button className="dropbtn">Dropdown</button>
           <div className="dropdown-content">

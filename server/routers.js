@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const   { getAppointment, postAppointment, deleteAppointment } = require("./controller.js")
 
-router.get('/appointments',getAppointment);
+router.get('/appointments/:date',getAppointment);
 
 router.post('/appointments',postAppointment);
 
