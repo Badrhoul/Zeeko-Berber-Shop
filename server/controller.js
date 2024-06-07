@@ -45,6 +45,17 @@ async function deleteAppointment(req, res) {
     }
 }
 
+async function getAllAppointments(req, res) {
+    try {
+        const list = await schema.find();
+        res.status(200).send(list);
+
+    }
+    catch (error) {
+        console.error(error)
+        res.status(500);
+    }
+}
 
 
-module.exports = { getAppointment, postAppointment, deleteAppointment }
+module.exports = { getAppointment, postAppointment, deleteAppointment, getAllAppointments }

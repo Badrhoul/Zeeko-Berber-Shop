@@ -5,6 +5,8 @@ import App from './App.jsx'
 import './index.css'
 import Form from './Form.jsx'
 import NotFoundPage from './NotFound.jsx'
+// import Appointments from './appointments.jsx'
+import AppointmentPage from './appointPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/schedule',
     element: <Form />
+  },
+  {
+    path: '/appointments',
+    element:<AppointmentPage/>
   }
 ]);
 
