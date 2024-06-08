@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useHistory } from 'react';
 import './Form.css';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [appointments, setAppointments] = useState([]);
     const [availableSlots, setAvailableSlots] = useState([
-        '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '01:00', '01:30'
+        '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30'
     ]);
 
+    
     const apiUrl = 'http://localhost:3000/';
 
     useEffect(() => {
@@ -28,7 +31,7 @@ function Form() {
                     const bookedTimes = data.map(appointment => appointment.time);
                     console.log(bookedTimes, "this is booked times")
                     setAvailableSlots(availableSlots => bookedTimes.length ? availableSlots.filter(slot => !bookedTimes.includes(slot)) : [
-                        '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '01:00', '01:30'
+                        '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30'
                     ]);
 
                     console.log(appointments, "appointments")
@@ -60,7 +63,7 @@ function Form() {
             .then(response => response.json())
             .then(data => setAppointments([...appointments, data]));
 
-        // this.reset()
+            navigate('/');
 
     };
 
@@ -99,13 +102,15 @@ function Form() {
                 <label>Time:</label>
                 <div className="time-buttons">
                     {availableSlots.map(slot => (
-                        <button className="time-button" key={slot} onClick={setNewTime} name="time" value={slot}>
+                        <button className={`time-button ${time === slot ? 'selected' : ''}`} key={slot} onClick={setNewTime} name="time" value={slot}>
                             {slot}
                         </button>
                     ))}
                 </div>
             </div>
+            
             <button type="submit" className="submit-button" onClick={handleSubmit}>Submit</button>
+            
         </form>
         </>
     );

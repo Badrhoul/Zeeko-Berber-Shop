@@ -4,15 +4,17 @@ import Appointments from './appointments'
 
 
 function AppointmentList({ appointmentList, handleDelete }) {
+    
 
+    let sortedList = [...appointmentList].sort((a,b)=> new Date(a.date) - new Date (b.date));
+    let sortedByTime = [...sortedList].sort((a,b)=> b.time-a.time)
+console.log('this is the sorted by time',sortedByTime)
     return (
         <>
-        <div>Appintment list Div</div>
             <div>
-                {appointmentList && appointmentList.map((item) => {
+                {sortedByTime && sortedByTime.map((item) => {
                     return <Appointments key={item._id} appointment={item} handleDelete={handleDelete}></Appointments>
                 })}
-
             </div>
         </>
     )

@@ -6,6 +6,8 @@ const Appointments = ({ appointment, handleDelete }) => {
 
     const dateFormatter = format(new Date(appointment.date), 'PPP')
 
+    
+
     return (
         <div className='appointmentCard'>
             <h2 className='appointmentName'>{appointment.name}</h2>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AppointmentList from './appointmentList'
+import Navbar from './Navbar';
 
 function AppointmentPage() {
     const apiUrl = 'http://localhost:3000/';
@@ -8,6 +9,8 @@ function AppointmentPage() {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [list, setList] = useState([])
+
+    let appList;
 
 
     useEffect(() => {
@@ -22,6 +25,7 @@ function AppointmentPage() {
                 console.log('appointments:', data);
 
                 setList([...data])
+                
             })
     }, [])
 
@@ -36,7 +40,7 @@ function AppointmentPage() {
 
     return (
         <>
-        <div>Hello</div>
+        <Navbar></Navbar>
             <AppointmentList appointmentList={list} handleDelete={handleDelete} />
         </>
     )
