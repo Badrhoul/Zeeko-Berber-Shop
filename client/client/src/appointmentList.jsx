@@ -1,10 +1,10 @@
 import "./appointmentList.css"
 import Appointments from './appointments'
-import { useState, useEffect } from 'react'
+
 
 
 function AppointmentList({ appointmentList, handleDelete }) {
-console.log(appointmentList)
+
     return (
         <>
         <div>Appintment list Div</div>

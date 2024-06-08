@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import AppointmentList from './appointmentList'
-// import { listenerCount } from '../../../server/model';
 
 function AppointmentPage() {
     const apiUrl = 'http://localhost:3000/';
@@ -22,7 +21,7 @@ function AppointmentPage() {
             .then(data => {
                 console.log('appointments:', data);
 
-                setList([...list, ...data])
+                setList([...data])
             })
     }, [])
 
