@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+// import { IoMdMenu } from "react-icons/io";
 //import logo from \assets\barberLogo.jpeg
 
 function Navbar() {
@@ -14,15 +15,18 @@ function Navbar() {
         <button className="nav-button">Home</button>
         </Link>
         <button className="nav-button">About</button>
+        
         <Link to='/schedule'>
           <button className="nav-button">Book Now</button>
         </Link>
+        
         <div className="dropdown">
-          <button className="dropbtn">Dropdown</button>
+          
+          <button className="dropbtn">✂️</button>
           <div className="dropdown-content">
             <Link to='/appointments'>Appointments</Link>
-            <a href="#option2">Option 2</a>
-            <a href="#option3">Option 3</a>
+            <a href="#option2">Sign Up</a>
+            <a href="#option3">Login</a>
           </div>
         </div>
       </div>

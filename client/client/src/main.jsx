@@ -5,8 +5,16 @@ import App from './App.jsx'
 import './index.css'
 import Form from './Form.jsx'
 import NotFoundPage from './NotFound.jsx'
-// import Appointments from './appointments.jsx'
 import AppointmentPage from './appointPage.jsx'
+import LoginPage from './LoginPage.jsx'; 
+import SignupPage from './SignUpPage.jsx'; 
+
+// Import your publishable key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
 
 const router = createBrowserRouter([
   {
