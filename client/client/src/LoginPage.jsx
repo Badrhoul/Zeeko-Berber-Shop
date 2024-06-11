@@ -1,12 +1,21 @@
 // src/LoginPage.jsx
 import React from 'react';
 import { SignIn } from '@clerk/clerk-react';
-import './SignUpPage.css'
+import { useNavigate } from 'react-router-dom';
+
+
 
 function LoginPage(){
+
+    const navigate = useNavigate();
+
+    function handleSignIn(){
+        navigate('/')
+    }
+
   return (
     <div className="auth-container">
-      <SignIn path="/login" routing="path" signUpUrl="/signup" />
+      <SignIn path="/login"  afterSignIn={handleSignIn}/>
     </div>
   );
 };

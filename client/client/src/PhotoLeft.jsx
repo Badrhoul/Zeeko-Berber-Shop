@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './PhotoLeft.css'
 
-function PhotoLeft({photo,blurb}) {
+function PhotoLeft({photo,blurb,title}) {
 
   return (
     <div className='card1'>
@@ -10,8 +10,8 @@ function PhotoLeft({photo,blurb}) {
         <img src={photo} alt="Example" className='photo1' />
       </div>
       <div className='textContainer1'>
-        <h2 className='title1'>Title</h2>
-        <p className='description1'>This is an example of a photo with text on the right. Hover over the photo or text to see the effects.</p>
+        <h2 className='title1'>{title}</h2>
+        <p className='description1'>{blurb}</p>
       </div>
     </div>
   );

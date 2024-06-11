@@ -6,8 +6,10 @@ import './index.css'
 import Form from './Form.jsx'
 import NotFoundPage from './NotFound.jsx'
 import AppointmentPage from './appointPage.jsx'
-import LoginPage from './LoginPage.jsx'; 
-import SignupPage from './SignUpPage.jsx'; 
+import { ClerkProvider, RedirectToSignIn, SignedIn, SignedOut } from '@clerk/clerk-react';
+import LoginPage from './LoginPage.jsx';
+import SignupPage from './SignUpPage.jsx';
+
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -24,16 +26,33 @@ const router = createBrowserRouter([
   },
   {
     path: '/schedule',
-    element: <Form />
+    element:
+      <Form />
   },
   {
     path: '/appointments',
-    element:<AppointmentPage/>
-  }
+    element: <AppointmentPage />
+  },
+  {
+    path: '/login',
+    element:
+      <LoginPage />
+  },
+  {
+    path: '/signUp',
+    element:
+      <SignupPage />
+  },
+  // {
+  //   path: "/login/sso-callback",
+  //   element: <App />
+  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <RouterProvider router={router} />
+    </ClerkProvider>
   </React.StrictMode>,
 )

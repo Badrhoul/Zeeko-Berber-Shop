@@ -1,7 +1,7 @@
 // src/SignupPage.jsx
 import React from 'react';
 import { SignUp } from '@clerk/clerk-react';
-import './SignUpPage.css'
+
 
 function SignUpPage(){
   return (
