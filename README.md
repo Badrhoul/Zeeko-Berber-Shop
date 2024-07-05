@@ -5,6 +5,8 @@ When I deploy this app, the idea is that any barber will be able to build thier 
 
 # Getting started
 
+You will need Express server and MongoDB to run this project.
+
 Open the terminal and type "npm install" - This is for date formatting across the application
 
 Navigate to the server folder and run the same command. When the dependencies installed run command "nodemon index" to start the server.
