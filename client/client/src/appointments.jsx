@@ -1,12 +1,12 @@
 import React from 'react';
-import './appointments.css'
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import './Css Files/appointments.css'
+import { format } from 'date-fns'
 
 const Appointments = ({ appointment, handleDelete }) => {
 
     const dateFormatter = format(new Date(appointment.date), 'PPP')
 
-    
+
 
     return (
         <div className='appointmentCard'>

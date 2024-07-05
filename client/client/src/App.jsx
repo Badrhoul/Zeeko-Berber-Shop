@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import Navbar from "./Navbar.jsx"
-import './App.css'
+import './Css Files/App.css'
 import PhotoRight from './PhotoRight.jsx'
 import PhotoLeft from './PhotoLeft.jsx'
 import WorkingHours from './workingHours.jsx'

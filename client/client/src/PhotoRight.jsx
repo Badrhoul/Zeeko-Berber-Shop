@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import './PhotoRight.css'
+import './Css Files/PhotoRight.css'
 
 function PhotoRight({photo,blurb,title}) {
 

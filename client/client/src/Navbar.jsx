@@ -1,14 +1,11 @@
 import React from 'react';
-import { useEffect } from 'react';
-import './Navbar.css';
+import './Css Files/Navbar.css';
 import { Link } from 'react-router-dom';
-import { useAuth } from "@clerk/clerk-react";
 
 
 function Navbar() {
 
-  const { userId, isLoaded } = useAuth()
-  // const navigate = useNavigate()
+  const userId = null
 console.log(userId)
 
   return (
